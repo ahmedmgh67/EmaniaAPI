@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: hasel-api
+    restart: always
+    build: .
+    ports:
+      - '80:5000'
+    links:
+      - mongo-emania
+  mongo-emania:
+    container_name: mongo-emania
+    image: mongo
+    ports:
+      - '27017:27017'
