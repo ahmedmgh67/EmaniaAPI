@@ -44,10 +44,7 @@ var ProductSchema = new Schema({
     type: String,
     required: true
   },
-  payment:{
-    type: String,
-    required: true
-  },
+  
 })
 mongoose.model("products", ProductSchema);
 var Product = mongoose.model("products");
@@ -115,6 +112,10 @@ var OrderSchema = new Schema({
   products:[{
     type: String
   }],
+  payment:{
+    type: String,
+    required: true
+  },
 })
 mongoose.model("orders", OrderSchema);
 var Order = mongoose.model("orders");
