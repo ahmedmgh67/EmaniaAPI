@@ -40,6 +40,10 @@ var ProductSchema = new Schema({
     type: String,
     required: true
   },
+  category:{
+    type: String,
+    required: true
+  },
 })
 mongoose.model("products", ProductSchema);
 var Product = mongoose.model("products");
@@ -87,7 +91,7 @@ app.route('/api/products/:product')
 
 
 //orders
-var OrderScema = new Schema({
+var OrderSchema = new Schema({
   user:{
     type: String,
     required: true
@@ -108,7 +112,7 @@ var OrderScema = new Schema({
     type: String
   }],
 })
-mongoose.model("orders", OrderScema);
+mongoose.model("orders", OrderSchema);
 var Order = mongoose.model("orders");
 listOrders = function(req, res){
   Order.find({}, function(err, orders) {
