@@ -44,6 +44,10 @@ var ProductSchema = new Schema({
     type: String,
     required: true
   },
+  payment:{
+    type: String,
+    required: true
+  },
 })
 mongoose.model("products", ProductSchema);
 var Product = mongoose.model("products");
